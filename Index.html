@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Portal</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AXYE SCHOOL | Student Portal</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">MySchool Portal</div>
-    <ul class="nav-links">
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">Assignments</a></li>
-      <li><a href="#">Results</a></li>
-    </ul>
-  </nav>
 
-  <div class="main">
-    <h1>Welcome to the Student Portal</h1>
-    <p>Select an option from the menu.</p>
-  </div>
+  <!-- Header/Navbar -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <img src="images/logo.JPG" alt="AXYE School Logo" />
+      <span>AXYE SCHOOL</span>
+    </a>
 
-  <script src="script.js"></script>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="assignments.html">Assignments</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li id="loginNav"><a href="login.html" class="login-btn">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to AXYE School Portal</h1>
+    <p>Your gateway to academic success. Access your dashboard, courses, results, and more.</p>
+    <a href="dashboard.html" class="btn">Go to Dashboard</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 AXYE SCHOOL. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript: Hide login if already logged in -->
+  <script>
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      document.getElementById('loginNav').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
